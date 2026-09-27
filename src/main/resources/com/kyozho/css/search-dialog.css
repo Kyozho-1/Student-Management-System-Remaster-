@@ -1,0 +1,48 @@
+/* Dialog Pane */
+.dialog-pane {
+    -fx-background-color: gray;
+
+    -fx-font-family: "Consolas";
+}
+/* Dialog Pane */
+
+
+/* ID Label */
+.id-label {
+    -fx-text-fill: white;
+}
+/* ID Label */
+
+
+/* Button  */
+.button {
+    -fx-background-radius: 50px;
+    -fx-background-color: black;
+
+    -fx-border-radius: 50px;
+    -fx-border-color: white;
+
+    -fx-text-fill: white;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 3);
+}
+
+.button:hover {
+    -fx-border-color: orangeRed;
+}
+/* Button  */
+
+
+/* Text Field */
+.text-field {
+    -fx-background-radius: 10px;
+    -fx-background-color: lightSlateGray;
+
+    -fx-border-radius: 50px;
+    -fx-border-color: black;
+
+    -fx-text-fill: white;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 3);
+}
+/* Text Field */

@@ -1,0 +1,56 @@
+/* Button */
+.button {
+    -fx-background-radius: 50px;
+    -fx-background-color: black;
+
+    -fx-border-radius: 50px;
+    -fx-border-color: white;
+
+    -fx-text-fill: white;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 3);
+}
+
+.button:hover {
+    -fx-border-color: orangeRed;
+}
+/* Button */
+
+
+/* Table */
+.table-view {
+    -fx-control-inner-background: gray;
+}
+
+.table-cell {
+    -fx-border-color: darkGray;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: tomato;
+}
+
+/*TODO: Change text color to white when editing cell!*/
+
+/*TODO: Fix column color change bug!*/
+.table-view .column-header-background {
+    -fx-background-color: gray;
+}
+/* Table */
+
+
+/* ToolBar */
+.tool-bar {
+    -fx-background-color: gray;
+}
+/* ToolBar */
+
+
+/* StackPane */
+.stack-pane {
+    -fx-background-color: gray;
+
+    -fx-font-family: "Consolas";
+}
+/* StackPane */

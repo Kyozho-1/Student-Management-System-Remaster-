@@ -1,0 +1,8 @@
+# Maven
+target/
+
+# VSCode
+.vscode/
+
+# Planning
+planning/
