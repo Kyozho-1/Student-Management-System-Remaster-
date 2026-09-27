@@ -26,7 +26,7 @@ import javafx.scene.control.TextField;
 import java.io.File;
 import java.util.ArrayList;
 
-import com.kyozho.backend.JsonProcesser;
+import com.kyozho.backend.JsonProcessor;
 
 /**
  * The system that manages students via a table. <br>
@@ -74,7 +74,7 @@ public class StudentManageSystem {
 
     private boolean savingFirstTime;
 
-    private JsonProcesser jsonProcesser;
+    private JsonProcessor jsonProcessor;
 
     private Alert errAlert;
     private Alert infoAlert;
@@ -89,7 +89,7 @@ public class StudentManageSystem {
 
         students = new ArrayList<>();
 
-        jsonProcesser = new JsonProcesser();
+        jsonProcessor = new JsonProcessor();
 
         savingFirstTime = true;
 
@@ -162,8 +162,6 @@ public class StudentManageSystem {
 
 			Dialog<Void> dialog = new Dialog<>();
 
-            students.forEach(student -> System.out.println(student.getId()));
-
 			dialog.setTitle(DIALOG_TITLE);
             dialog.setHeight(DIALOG_DIMENSIONS[0]);
             dialog.setWidth(DIALOG_DIMENSIONS[1]);
@@ -224,7 +222,7 @@ public class StudentManageSystem {
                     createColumns();
                 }
 
-                students = jsonProcesser.loadFromJson(filePath.getAbsolutePath());
+                students = jsonProcessor.loadFromJson(filePath.getAbsolutePath());
                 
                 studentsTableView.getItems().clear();
                 
@@ -240,7 +238,7 @@ public class StudentManageSystem {
      */
     private void addQuitBtnFunctionality() {
         buttons[OptionValues.SAVE_AND_QUIT.ordinal()].setOnAction(event -> {
-            jsonProcesser.saveToJson(students);
+            jsonProcessor.saveToJson(students);
             
             System.exit(0);
         });
@@ -479,9 +477,7 @@ public class StudentManageSystem {
                 createColumns();
             }
 
-            students = jsonProcesser.loadLastSavedData();
-            
-            students.forEach(System.out::println);
+            students = jsonProcessor.loadLastSavedData();
 
             studentsTableView.getItems().clear();
 

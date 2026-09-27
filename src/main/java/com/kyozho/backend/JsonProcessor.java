@@ -2,9 +2,12 @@ package com.kyozho.backend;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
 import java.io.IOException;
+
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.Files;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,15 +15,18 @@ import java.util.List;
 /**
  * Contains methods for processing JSON data.
  */
-public class JsonProcesser {
-    private ObjectMapper objMapper;
+public class JsonProcessor {
+    private final ObjectMapper objMapper;
 
-    private final String DATA_PATH = "data/students.json";
+    /* When the application is packaged, the path will just be "data", "students.json". */
+    private final Path DATA_PATH = Paths.get(
+        System.getProperty("user.home"), ".student_management_system", "students.json"
+    );
 
     /**
      * Sets up the <code>ObjectMapper</code> needed to be able to process JSON data.
      */
-    public JsonProcesser() {
+    public JsonProcessor() {
         objMapper = new ObjectMapper();
     }
 
@@ -29,8 +35,12 @@ public class JsonProcesser {
      * @param students A <code>Student</code> <code>ArrayList</code> containing the students from the table.
      */
     public void saveToJson(ArrayList<Student> students) {
+        System.out.println("I was called");
+
         try {
-            objMapper.writerWithDefaultPrettyPrinter().writeValue(new File(DATA_PATH), students);
+            Files.createDirectories(DATA_PATH.getParent());
+
+            objMapper.writerWithDefaultPrettyPrinter().writeValue(DATA_PATH.toFile(), students);
         } catch (IOException IOE) {
             IOE.printStackTrace();
         }
@@ -67,13 +77,17 @@ public class JsonProcesser {
      */
     public ArrayList<Student> loadLastSavedData() {
         try {
+            if (!Files.exists(DATA_PATH)) {
+                return new ArrayList<Student>();
+            }
+
             List<Student> lastSavedStudents = Arrays.asList(
-                objMapper.readValue(Paths.get(DATA_PATH).toFile(), Student[].class)
+                objMapper.readValue(DATA_PATH.toFile(), Student[].class)
             );
 
             return new ArrayList<Student>(lastSavedStudents);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException IOE) {
+            IOE.printStackTrace();
         }
 
         return new ArrayList<Student>();
