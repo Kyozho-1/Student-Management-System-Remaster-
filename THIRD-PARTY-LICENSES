@@ -1,0 +1,9 @@
+Third-Party Dependencies
+
+**Jackson JSON Processor**
+
+This project uses Jackson, licensed under the Apache License, Version 2.0.
+
+Full license text: https://www.apache.org/licenses/LICENSE-2.0
+
+Jackson project: https://github.com/FasterXML/jackson
