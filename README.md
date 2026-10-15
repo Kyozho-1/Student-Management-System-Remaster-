@@ -32,3 +32,14 @@
 2. More columns about information of students.
 3. An "About" button talking about some information about the application and the developer.
 4. More data formats will be accepted (CSV, YAML).
+
+## Dependencies and Third-Party Licenses
+
+This project uses the following libraries:
+
+- **JavaFX (OpenJFX):** Provides the graphical user interface.
+- **Jackson:** Handles JSON serialization and deserialization.
+
+See [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md) for licensing information.
+
+The project uses Maven to manage its dependencies. See `pom.xml` for dependency versions and configuration.
