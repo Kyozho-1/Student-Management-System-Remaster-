@@ -1,45 +1,65 @@
 # Student Management System
+
 ### Version: 0.9.0 (Beta 1)
 
 ## What Is It About?
-+ This system allows you to add students to a table. This allows you to keep track of students' IDs, names, nicknames (if applicable), home addresses, phone numbers, E-mails, and classes that they are enrolled in.
+
+The Student Management System is a desktop application that allows users to manage student records in a table. Records can include student IDs, names, nicknames (if applicable), home addresses, phone numbers, email addresses, and enrolled classes.
 
 ## Features
-1. Adding a student to the system
-2. Deleting a student from the system.
-3. Load a student dataset via a JSON file.
-4. Save the student dataset to a JSON in the folder strcuture and quit the application.
-5. Automatically loading last saved data from previous use into the table.
 
-## How to Run The Application
-+ For now, in order to run the application, please use `mvn javafx:run` or generate an executable via Windows via `jpackage`. This problem should be fixed by the next update.
+1. Add students to the system.
+2. Delete students from the system.
+3. Load student data from a JSON file.
+4. Save student data to a JSON file.
+5. Automatically load previously saved student data when the application starts.
 
-## Recommened Version of Java to Run This Application
-+ Java 21
+## How to Run the Application
 
-## Dependencies Needed to Run This Application
-+ JavaFX
-+ Maven
+Currently, you can run the application using Maven:
 
-## Known Limitations
-1. There could be more columns concerning more information about a student. Beta 2 should have more columns containing such information.
-2. There's no "About" button talking about the developer, the version, etc.
-3. There's no .exe present for easy download. This will be present in the release version.
-4. JSON is the only format accepted for data handling.
+```bash
+mvn javafx:run
+```
 
-## Features to Be Present in Beta 2
-1. A light and dark mode.
-2. More columns about information of students.
-3. An "About" button talking about some information about the application and the developer.
-4. More data formats will be accepted (CSV, YAML).
+Alternatively, you can package the application for Windows using `jpackage`. A more convenient executable distribution is planned for a future release.
 
-## Dependencies and Third-Party Licenses
+## Recommended Java Version
 
-This project uses the following libraries:
+- Java 21
+
+## Dependencies
 
 - **JavaFX (OpenJFX):** Provides the graphical user interface.
 - **Jackson:** Handles JSON serialization and deserialization.
+- **Maven:** Builds the project and manages dependencies.
+
+See `pom.xml` for dependency versions and configuration.
+
+## Known Limitations
+
+1. Student records may need additional fields. More student information is planned for Beta 2.
+2. The application does not yet include an About section with information about the application, its version, and its developer.
+3. A ready-to-download Windows executable is not yet available.
+4. JSON is currently the only supported data format.
+
+## Planned Features for Beta 2
+
+1. Light and dark themes.
+2. Additional student information fields.
+3. An About section containing information about the application, its version, and its developer.
+4. Support for additional data formats, including CSV and YAML.
+
+## Dependencies and Third-Party Licenses
+
+This project uses third-party libraries, including JavaFX and Jackson. Their respective licensing terms apply independently of the license covering this project's original code.
 
 See [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md) for licensing information.
 
-The project uses Maven to manage its dependencies. See `pom.xml` for dependency versions and configuration.
+## License
+
+This project's original code is licensed under the Apache License 2.0. You may use, modify, and distribute that code in accordance with the terms of the license.
+
+See [LICENSE](LICENSE) for the full license text.
+
+Third-party dependencies, including JavaFX and Jackson, remain subject to their respective licenses. See [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md) for details.
