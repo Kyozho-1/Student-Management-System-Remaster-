@@ -1,17 +1,21 @@
 # Third-Party Dependencies
 
+This project uses the following third-party libraries. Each library retains its own applicable license terms.
+
 ## Jackson JSON Processor
 
-This project uses Jackson, licensed under the Apache License, Version 2.0.
+This project uses Jackson for JSON serialization and deserialization.
 
-- Full license text: https://www.apache.org/licenses/LICENSE-2.0
-
-- Jackson project: https://github.com/FasterXML/jackson
+- **License:** Apache License 2.0
+- **Version:** See `pom.xml` for the version used by this project.
+- **Project:** https://github.com/FasterXML/jackson
+- **Full license text:** https://www.apache.org/licenses/LICENSE-2.0
 
 ## JavaFX (OpenJFX)
 
 This project uses JavaFX for its graphical user interface.
 
-- **License:** GNU General Public License v2 with the Classpath Exception (GPLv2+CE)
+- **License:** GNU General Public License, version 2, with the Classpath Exception (GPL-2.0 with Classpath Exception).
+- **Version:** See `pom.xml` for the version used by this project.
 - **Project:** https://openjfx.io/
-- **Source code and license:** https://github.com/openjdk/jfx/blob/master/LICENSE
+- **License information:** https://github.com/openjdk/jfx/blob/master/LICENSE
